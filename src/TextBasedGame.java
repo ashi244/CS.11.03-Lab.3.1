@@ -134,7 +134,7 @@ public class TextBasedGame {
         int wardenApproach = rand.nextInt(5);
         Scanner scanner = new Scanner(System.in);
         int heist = scanner.nextInt();
-        if (heist > wardenApproach){
+        if (heist * 2 > wardenApproach / 2){
             System.out.println("Congrats, you've successfully stolen the key");
             System.out.println("Later that night, you use the key to slide througn the prison unnoticed, and successfully escape");
             afterEscape();
@@ -252,6 +252,9 @@ public class TextBasedGame {
             return 1;
         }
         else if ((Math.abs(a - b) == 1) || (Math.abs(b - c) == 1) || (Math.abs(a - c) == 1)){
+            return 1;
+        }
+        else if ((a % 5 == 0) || (b % 5 == 0) || (c % 5 == 0)){
             return 1;
         }
         return 0;
